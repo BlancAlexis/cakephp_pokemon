@@ -1,0 +1,41 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+}
+header{
+    height: 10vh;
+}
+main{
+    height: 80vh;
+}
+.navbar-brand{
+    padding: 0;
+    margin-left: 1vw;
+}
+.navbar{
+    margin-top: 2vh;
+}
+.navbar-nav{
+    list-style: none;
+}
+.nav-item{
+    margin-left: 20px;
+}.nav-item>a{
+    text-decoration: none;
+}
+
+footer{
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+    background-color: #337ab7;
+
+}
+.footer-text{
+    color: #fff;
+    top: 10%;
+}
