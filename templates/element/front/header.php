@@ -10,6 +10,9 @@
             <a class="nav-link" href="#">Carte</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="#">Ajouter Carte</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="#">Panier</a>
         </li>
         <li class="nav-item">
