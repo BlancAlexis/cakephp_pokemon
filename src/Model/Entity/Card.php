@@ -9,5 +9,5 @@ class Card extends Entity{
         '*'=> true,
         'id'=>false,
 
-    ];
+    s];
 }
