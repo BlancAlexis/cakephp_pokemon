@@ -2,7 +2,12 @@
 
 namespace App\Model\Entity;
 
-class Card extends \Cake\ORM\Entity
-{
+use Cake\ORM\Entity;
+class Card extends Entity{
 
+    protected $_accessible=[
+        '*'=> true,
+        'id'=>false,
+
+    ];
 }
