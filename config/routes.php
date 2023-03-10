@@ -52,6 +52,7 @@ return static function (RouteBuilder $routes) {
          */
         $builder->connect('/', ['controller' => 'Cards', 'action' => 'index', 'home']);
 
+
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */

@@ -9,11 +9,12 @@ class CardsController extends AppController {
          $cards=$this->Paginator->paginate($this->Cards->find());
          $this->set(compact('cards'));
     }
+
     public function addToCart($cartID){
 
     }
-    public function view($cards){
-        echo 'fgdssssssssssssssssssssssssssssssssssssssssssssss';
+    public function click(){
+        return $this->redirect('http://www.example.com');
     }
     public function add(){
 

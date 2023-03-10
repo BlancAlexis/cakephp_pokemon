@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <?php 
+        <?php
             $cpt =0;
             foreach($cards as $card):
                 if($cpt != 4){
@@ -19,7 +19,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a class="btn btn-outline-dark mt-auto" href="#">Ajouter au panier</a>
+                        <?php echo $this->Html->link('Ajout au panier', ['controller' => 'Cards', 'action' => 'click'], ['escapeTitle' => false, "class" => 'btn btn-outline-dark mt-auto']); ?>
                     </div>
                 </div>
             </div>
