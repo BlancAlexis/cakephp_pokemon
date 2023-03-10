@@ -186,7 +186,8 @@ return [
         'log' => true,
         'trace' => true,
         'ignoredDeprecationPaths' => [
-            "config/bootstrap.php"
+            "config/bootstrap.php",
+            "vendor/cakephp/cakephp/src/Controller/ComponentRegistry.php"
         ],
     ],
 
