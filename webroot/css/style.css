@@ -3,14 +3,11 @@
     margin: 0;
     padding: 0;
 }
-body{
-    min-height: 100vh;
-}
 header{
     height: 10vh;
 }
 main{
-    height: 80vh;
+    min-height: 100vh;
 }
 .navbar-brand{
     padding: 0;
@@ -29,6 +26,7 @@ main{
 }
 
 footer{
+    margin-top: 5vh;
     width: 100vw;
     height: 10vh;
     text-align: center;
