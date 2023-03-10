@@ -48,14 +48,13 @@ return static function (RouteBuilder $routes) {
         /*
          * Here, we are connecting '/' (base path) to a controller called 'Pages',
          * its action called 'display', and we pass a param to select the view file
-         * to use (in this case, templates/Pages/home.php)...
+         * to use (in this case, templates/Pages/index.php)...
          */
         $builder->connect('/', ['controller' => 'Cards', 'action' => 'index', 'home']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
-        $builder->connect('/pages/*', 'Pages::display');
 
         /*
          * Connect catchall routes for all controllers.
@@ -63,7 +62,6 @@ return static function (RouteBuilder $routes) {
          * The `fallbacks` method is a shortcut for
          *
          * ```
-         * $builder->connect('/:controller', ['action' => 'index']);
          * $builder->connect('/:controller/:action/*', []);
          * ```
          *
