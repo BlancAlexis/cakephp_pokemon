@@ -12,9 +12,9 @@
                 <div class="card-body text-center">
                     <div class="card-text">
                         <!-- Product name-->
-                        <h5 class="fw-bolder"><?= $this->Html->Link($card->namePokemon, ['action' => 'view', $card->namePokemon]) ?></h5>
-                        <!-- Product price-->
-                        <?= $this->Html->link($card->prix, ['action' => 'view', $card->prix]) . "€" ?>
+                       <h5 class="fw-bolder"><?php echo $card->namePokemon?></h5>
+
+                        <?php echo $card->prix."€" ?>
                     </div>
                 </div>
                 <div class="card-footer">

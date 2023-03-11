@@ -5,9 +5,15 @@ namespace App\Controller;
 class BasketsController
 {
     public function index(){
-        $this->loadComponent('Paginator');
-        $cards=$this->Paginator->paginate($this->Cards->find());
-        $this->set(compact('cards'));
+        $baskets=$this->getSession()->read('Basket');
+        if($baskets){
+            foreach ($baskets as $basket){
+                $this->set(compact('baskets'));
+            }
+
+        }else{
+            echo "Panier vide";
+        }
     }
 
     public function delete($cartID){
