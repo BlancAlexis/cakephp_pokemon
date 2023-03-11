@@ -21,6 +21,8 @@ main{
 }
 .nav-item{
     margin-left: 20px;
+    text-decoration: none;
+
 }.nav-item>a{
     text-decoration: none;
 }

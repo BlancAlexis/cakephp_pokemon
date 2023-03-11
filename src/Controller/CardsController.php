@@ -16,6 +16,16 @@ class CardsController extends AppController {
 
     }
 
+    public function click()
+    {
+        $basket = $this->request->getSession()->read('Basket') ?? [];
+        $cardID = $this->request->getData('id');
+        array_push($basket,$cardID);
+        $this->request->getSession()->write('Basket', $basket);
+        $this->redirect($this->referer());
+    }
+    public function add(){
+
     public function add(){
         if (!empty($this->request->getData())) {
             $cards = $this->Cards->newEmptyEntity();
