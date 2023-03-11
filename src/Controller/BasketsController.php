@@ -9,7 +9,7 @@ class BasketsController  extends AppController
         if($baskets){
             foreach ($baskets as $basketID){
                 $cards=$this->Cards->get($basketID);
-                $this->set(compact('cards'));
+                $this->set(compact('card'));
             }
 
         }else{

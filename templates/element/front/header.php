@@ -13,7 +13,7 @@
             <a class="nav-link" href="#">Ajouter Carte</a>
         </li>
         <li class="nav-item">
-          <?php echo $this->Html->link("panier",['url'=> ['controller'=> 'Baskets', 'action' => 'index' , ['class'=> 'nav-link text-danger' ]]]); ?>
+        <?php echo $this->Html->link('Panier', ['controller' => 'Baskets', 'action' => 'index'], ['escapeTitle' => false, 'class' => 'nav-link']);?>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled" href="#">Connexion</a>
