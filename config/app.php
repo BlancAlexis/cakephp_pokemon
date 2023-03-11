@@ -18,6 +18,7 @@ return [
      * true: Errors and warnings shown.
      */
     'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
+    'uploadedFilesAsObjects' => false,
 
     /*
      * Configure basic information about the application.
@@ -187,7 +188,8 @@ return [
         'trace' => true,
         'ignoredDeprecationPaths' => [
             "config/bootstrap.php",
-            "vendor/cakephp/cakephp/src/Controller/ComponentRegistry.php"
+            "vendor/cakephp/cakephp/src/Controller/ComponentRegistry.php",
+            "config/routes.php"
         ],
     ],
 

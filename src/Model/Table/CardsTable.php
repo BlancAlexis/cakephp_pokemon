@@ -3,6 +3,8 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
+use Cake\Validation\Validator;
+
 class CardsTable extends Table{
 public function initialize(array $config): void
 {
@@ -10,4 +12,35 @@ public function initialize(array $config): void
     $this->addBehavior('Timestamp');
     $this->setPrimaryKey('id');
 }
+public function validationDefault(Validator $validator): Validator
+{
+      $validator
+           ->scalar('urlPokemon')
+           ->maxLength('urlPokemon', 255)
+           ->requirePresence('urlPokemon', 'create') 
+           ->notEmptyFile('urlPokemon');
+
+      $validator
+           ->scalar('urlPokemon')
+           ->maxLength('urlPokemon', 255)
+           ->requirePresence('urlPokemon', 'create')
+           ->notEmptyString('urlPokemon');
+
+      // File validation
+      $validator
+           ->notEmptyFile('urlPokemon')
+           ->add('urlPokemon', [
+                 'mimeType' => [
+                       'rule' => ['mimeType',['image/jpg','image/png','image/jpeg','application/pdf']],
+                       'message' => 'File type must be .jpg,.jpeg,.png,.pdf',
+                 ],
+                 'fileSize' => [
+                       'rule' => ['fileSize','<', '2MB'],
+                       'message' => 'File size must be less than 2MB',
+                 ]
+           ]);
+
+      return $validator;
+}
+
 }
