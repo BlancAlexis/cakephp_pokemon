@@ -13,8 +13,13 @@ class CardsController extends AppController {
     public function addToCart($cartID){
 
     }
-    public function click(){
-        return $this->redirect('http://www.example.com');
+    public function click()
+    {
+        $basket = $this->request->getSession()->read('Basket') ?? [];
+        $cardID = $this->request->getData('id');
+        array_push($basket,$cardID);
+        $this->request->getSession()->write('Basket', $basket);
+        print_r($basket);
     }
     public function add(){
 

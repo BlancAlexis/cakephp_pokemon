@@ -19,7 +19,10 @@
                 </div>
                 <div class="card-footer">
                     <div class="text-center">
-                        <?php echo $this->Html->link('Ajout au panier', ['controller' => 'Cards', 'action' => 'click'], ['escapeTitle' => false, "class" => 'btn btn-outline-dark mt-auto']); ?>
+                        <?= $this->Form->create(null, ['url' => ['controller' => 'Cards', 'action' => 'click']]) ?>
+                        <?= $this->Form->hidden('id', ['value' => $card->id]) ?>
+                        <?= $this->Form->submit('Ajouter au panier', ["class" => 'btn btn-outline-dark mt-auto']) ?>
+                        <?= $this->Form->end() ?>
                     </div>
                 </div>
             </div>
