@@ -19,7 +19,7 @@ class CardsController extends AppController {
         $cardID = $this->request->getData('id');
         array_push($basket,$cardID);
         $this->request->getSession()->write('Basket', $basket);
-        print_r($basket);
+        $this->redirect($this->referer());
     }
     public function add(){
 

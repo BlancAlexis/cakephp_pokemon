@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-class BasketsController
+class BasketsController  extends AppController
 {
     public function index(){
-        $baskets=$this->getSession()->read('Basket');
+        $baskets=$this->request->getSession()->read('Basket');
         if($baskets){
-            foreach ($baskets as $basket){
-                $this->set(compact('baskets'));
-                echo $basket;
+            foreach ($baskets as $basketID){
+                $cards=$this->Cards->get($basketID);
+                $this->set(compact('cards'));
             }
 
         }else{
