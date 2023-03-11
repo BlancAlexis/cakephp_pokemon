@@ -9,6 +9,7 @@ class BasketsController
         if($baskets){
             foreach ($baskets as $basket){
                 $this->set(compact('baskets'));
+                echo $basket;
             }
 
         }else{
@@ -19,9 +20,7 @@ class BasketsController
     public function delete($cartID){
 
     }
-    public function click(){
-        return $this->redirect('http://www.example.com');
-    }
+
     public function add(){
 
     }
