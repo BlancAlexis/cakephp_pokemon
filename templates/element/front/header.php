@@ -10,7 +10,7 @@
             <a class="nav-link" href="#">Carte</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Ajouter Carte</a>
+            <?php echo $this->Html->link('Ajouter Carte', ['controller' => 'Cards', 'action' => 'add'], ['escapeTitle' => false, 'class' => 'nav-link']);?>
         </li>
         <li class="nav-item">
         <?php echo $this->Html->link('Panier', ['controller' => 'Baskets', 'action' => 'index'], ['escapeTitle' => false, 'class' => 'nav-link']);?>
