@@ -22,9 +22,18 @@ foreach ($tabCards as $cards): ?>
                                 <h6 class="font-weight-bold my-2"><?php echo "Stock : " . $cards->stock ?></h6>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-1">
-                                <h6 class="font-weight-bold my-2"><?php echo "Quantité demandé : " . ($baskets[$indice]); ?></h6>
+                                <h6 class="font-weight-bold my-2"><?php echo "Quantité demandé : " . ($baskets[$cards->id]); ?></h6>
                             </div>
-                        </div>
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <?= $this->Form->create(null, ['url' => ['controller' => 'baskets', 'action' => 'supp']]) ?>
+                                <?= $this->Form->hidden('id', ['value' => $cards->id]) ?>
+                                <?= $this->Form->submit('Supprimer', ["class" => 'btn btn-outline-dark mt-auto']) ?>
+                                <?= $this->Form->end() ?>
+                                <?= $this->Form->create(null, ['url' => ['controller' => 'baskets', 'action' => 'ajout']]) ?>
+                                <?= $this->Form->hidden('id', ['value' => $cards->id]) ?>
+                                <?= $this->Form->submit('Ajouter', ["class" => 'btn btn-outline-dark mt-auto']) ?>
+                                <?= $this->Form->end() ?>
+                            </div>
                 </li>
             </ul>
         </div>
@@ -37,9 +46,12 @@ foreach ($tabCards as $cards): ?>
 </div>
 
 <?php $indice++;
-$somme+=$cards->prix;
+$somme+=($baskets[$cards->id])*$cards->prix;
 endforeach;
 ?>
-<div class="col-lg-2 mx-auto">
+<div class="col-lg-2 mx-auto ">
 <?php echo "Pour un total de ".$somme."€"?>
+<?= $this->Form->create(null, ['url' => ['controller' => 'null', 'action' => 'null']]) ?>
+<?= $this->Form->submit('Procéder au payement', ["class" => 'btn btn-outline-dark mt-auto']) ?>
+<?= $this->Form->end() ?>
 </div>

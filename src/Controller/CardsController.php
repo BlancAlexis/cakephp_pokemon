@@ -17,11 +17,11 @@ class CardsController extends AppController
     {
         $basket = $this->request->getSession()->read('Basket') ?? [];
         $cardID = $this->request->getData('id');
-        if (in_array($cardID, $basket)) {
-            $key = array_search($cardID, $basket);
-            $basket[$key]++;
+        if(array_key_exists($cardID, $basket)) {
+            $basket[$cardID]++;
+            $this->request->getSession()->write('Basket', $basket);
         } else {
-            array_push($basket, $cardID);
+            $basket[$cardID]=1;
             $this->request->getSession()->write('Basket', $basket);
 
         }
