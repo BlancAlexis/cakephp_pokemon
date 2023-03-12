@@ -18,6 +18,15 @@ class ApiController extends AppController
         $this->Cards = $this->getTableLocator()->get('Cards');
     }
 
+    public function getByType($type)
+    {
+        $datas = $this->Cards->find()->where(['type1Pokemon' => $type])->all();
+
+        $this->set(['cards' => $datas]);
+        $this->viewBuilder()->setOption('serialize', true);
+        $this->RequestHandler->renderAs($this, 'json');
+
+    }
 
     public function index()
     {
