@@ -49,7 +49,7 @@ return static function (RouteBuilder $routes) {
     $routes->scope('/api', function(RouteBuilder $builder){
         $builder->connect('/cards', ['controller'=>'Api' , 'action'=> 'index']);
         $builder->connect('/cards/*', ['controller'=>'Api' , 'action'=> 'getByType']);
-        $builder->connect('/cards/nom/*', ['controller'=>'Api' , 'action'=> 'getByName']);
+        $builder->connect('/cards/name/*', ['controller'=>'Api' , 'action'=> 'getByName']);
 
     });
     $routes->scope('/', function (RouteBuilder $builder) {

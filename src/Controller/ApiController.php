@@ -27,7 +27,14 @@ class ApiController extends AppController
         $this->RequestHandler->renderAs($this, 'json');
 
     }
+    public function getByName($name)
+    {
+        $datas = $this->Cards->find()->where(['namePokemon' => $name])->all();
+        $this->set(['cards' => $datas]);
+        $this->viewBuilder()->setOption('serialize', true);
+        $this->RequestHandler->renderAs($this, 'json');
 
+    }
     public function index()
     {
         $datas = $this->Cards->find()->all();
