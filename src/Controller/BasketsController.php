@@ -52,8 +52,8 @@ class BasketsController  extends AppController
 
     public function index(){
         $baskets=$this->request->getSession()->read('Basket');
-        $key_baskets=array_keys($baskets);
         if($baskets){
+        $key_baskets=array_keys($baskets);
             $tabCards=array();
             foreach ($key_baskets as $key){
                 $cards=$this->card->get($key);
@@ -63,12 +63,11 @@ class BasketsController  extends AppController
             $this->set(compact('baskets'));
             $this->set(compact('tabCards'));
         }else{
-
-            echo "Panier vide";
+            $this->redirect(['action' => 'emptyBasket']);
         }
     }
 
-    public function delete($cartID){
+    public function emptyBasket(){
 
     }
 
