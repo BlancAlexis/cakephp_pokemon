@@ -4,7 +4,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
         <li class="nav-item active">
-        <?php echo $this->Html->link('Accueil', ['controller' => 'Cards', 'action' => 'index'], ['escapeTitle' => false, 'class' => 'nav-link']);?>
+            <a href="/" class="nav-link">Accueil</a>
         </li>
         <li class="nav-item">
             <?php echo $this->Html->link('Ajouter Carte', ['controller' => 'Cards', 'action' => 'add'], ['escapeTitle' => false, 'class' => 'nav-link']);?>
@@ -13,7 +13,7 @@
         <?php echo $this->Html->link('Panier', ['controller' => 'Baskets', 'action' => 'index'], ['escapeTitle' => false, 'class' => 'nav-link']);?>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">Connexion</a>
+        <?php echo $this->Html->link('Connexion ', ['controller' => 'Users', 'action' => 'login'], ['escapeTitle' => false, 'class' => 'nav-link']);?>
         </li>
         </ul>
     </div>
