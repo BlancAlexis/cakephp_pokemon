@@ -5,6 +5,7 @@ namespace App\Controller;
 class CardsController extends AppController
 {
 
+
     public function index()
     {
         $this->loadComponent('Paginator');
@@ -26,5 +27,14 @@ class CardsController extends AppController
 
         }
         $this->redirect($this->referer());
+    }
+    public function export()
+    {
+        $this->loadComponent('Paginator');
+        $allCards = $this->Paginator->paginate($this->Cards->find('all'));
+        $this->autoRender=false;
+        $this->response->getBody()->write(json_encode($allCards));
+        $this->response=$this->response->withDownload('card.json');
+
     }
 }
