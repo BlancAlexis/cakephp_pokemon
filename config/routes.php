@@ -23,6 +23,8 @@
 
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
+use Cake\Http\Middleware\CsrfProtectionMiddleware;
+
 
 return static function (RouteBuilder $routes) {
     /*
@@ -51,8 +53,7 @@ return static function (RouteBuilder $routes) {
          * to use (in this case, templates/Pages/index.php)...
          */
         $builder->connect('/', ['controller' => 'Cards', 'action' => 'index', 'home']);
-
-
+        
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
