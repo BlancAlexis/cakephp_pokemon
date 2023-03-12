@@ -46,6 +46,12 @@ return static function (RouteBuilder $routes) {
      */
     $routes->setRouteClass(DashedRoute::class);
 
+    $routes->scope('/api', function(RouteBuilder $builder){
+        $builder->connect('/cards', ['controller'=>'Api' , 'action'=> 'index']);
+        $builder->connect('/cards/*', ['controller'=>'Api' , 'action'=> 'getByType']);
+        $builder->connect('/cards/name/*', ['controller'=>'Api' , 'action'=> 'getByName']);
+
+    });
     $routes->scope('/', function (RouteBuilder $builder) {
         /*
          * Here, we are connecting '/' (base path) to a controller called 'Pages',
@@ -53,7 +59,7 @@ return static function (RouteBuilder $routes) {
          * to use (in this case, templates/Pages/index.php)...
          */
         $builder->connect('/', ['controller' => 'Cards', 'action' => 'index', 'home']);
-        
+
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
