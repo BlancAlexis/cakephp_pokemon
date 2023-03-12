@@ -9,7 +9,8 @@
 
             <!-- List group-->
             <ul class="list-group shadow">
-                <?php foreach($tabCards as $cards): ?>
+                <?php $indice=0;
+                 foreach($tabCards as $cards): ?>
                 <!-- list group item-->
                 <li class="list-group-item">
                     <!-- Custom content-->
@@ -22,15 +23,15 @@
                             <div class="d-flex align-items-center justify-content-between mt-1">
                                 <h6 class="font-weight-bold my-2"><?php echo "Stock : ".$cards->stock?></h6>
                             </div>
-                           <!-- <div class="d-flex align-items-center justify-content-between mt-1">
-                                <h6 class="font-weight-bold my-2"><?php /*echo "Quantité demandé : ".$basket[1]++;*/?></h6>
-                            </div>-->
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <h6 class="font-weight-bold my-2"><?php echo print_r($baskets);"Quantité demandé : ".($baskets[$indice]);?></h6>
+                            </div>
                         </div>
                     </div>
                         <div class="col-lg-4 mx-auto">
                         <?= $this->Html->image($cards->urlPokemon, array('class' => 'img-fluid', 'width'=>'200px')) ?>
                     </div>
-
+               <?= $indice++?>
                     <!-- End -->
                 </li>
                 <!-- End -->

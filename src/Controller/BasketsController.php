@@ -34,6 +34,7 @@ class BasketsController  extends AppController
                 $cards=$this->card->get($basketID);
                 array_push($tabCards, $cards);
             }
+            $this->set(compact('baskets'));
             $this->set(compact('tabCards'));
         }else{
 
