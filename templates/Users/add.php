@@ -42,7 +42,7 @@
                             </div>
                             <div class="pull-right">
                                 <?php
-                                echo $this->Form->button('Login', ['type' => 'submit', 'class' => 'btn btn-primary']);
+                                echo $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'btn btn-primary']);
                                 ?>
                             </div>
                             <?= $this->Form->end();?>
