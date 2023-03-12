@@ -47,5 +47,10 @@
                 </div>
             </div>
         <?php }endforeach;?>
+        <div class="d-flex align-items-center justify-content-between mt-12">
+            <?= $this->Form->create(null, ['url' => ['controller' => 'cards', 'action' => 'export']]) ?>
+            <?= $this->Form->submit('Export JSON', ["class" => 'btn btn-outline-dark mt-auto']) ?>
+            <?= $this->Form->end() ?>
+        </div>
     </div>
 </div>
